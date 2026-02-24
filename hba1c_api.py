@@ -3,12 +3,10 @@ from flask_cors import CORS
 from datetime import datetime
 import os
 
-app = Flask(__name__)
+# 👇 Tell Flask to look in current directory
+app = Flask(__name__, template_folder=".")
 CORS(app)
 
-# -------------------------------
-
-# -------------------------------
 @app.route("/")
 def home():
     return render_template("index.html")
