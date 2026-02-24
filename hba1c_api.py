@@ -59,15 +59,6 @@ def assess_patient(data):
         confidence = 0.80
 
     # ------------------------------------------------------
-    # Sickle Cell
-    # ------------------------------------------------------
-    elif hb < 10 and lifespan < 80 and bilirubin > 1.2:
-        disorder = "sickle_cell"
-        corrected = exp_hba1c
-        reliable = False
-        confidence = 0.78
-
-    # ------------------------------------------------------
     # G6PD
     # ------------------------------------------------------
     elif hb < 11 and bilirubin > 1.8 and lifespan < 90:
@@ -75,6 +66,15 @@ def assess_patient(data):
         corrected = exp_hba1c
         reliable = False
         confidence = 0.82
+
+    # ------------------------------------------------------
+    # Sickle cell
+    # ------------------------------------------------------
+    elif hb < 10 and lifespan < 80 and bilirubin > 1.2:
+        disorder = "sickle_cell"
+        corrected = exp_hba1c
+        reliable = False
+        confidence = 0.78
 
     # ------------------------------------------------------
     # Extreme Mismatch (Anomaly)
